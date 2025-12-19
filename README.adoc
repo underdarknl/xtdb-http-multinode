@@ -19,7 +19,9 @@ Listing current nodes can done using a GET to `/_xtdb/list-nodes`
 
 [source,curl]
 ----
-curl $XTDB_URL/_xtdb/list-nodes
+curl \
+     -H "Accept: application/edn"
+     $XTDB_URL/_xtdb/list-nodes
 ----
 
 
