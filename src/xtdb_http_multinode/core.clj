@@ -347,6 +347,10 @@
 (s/def ::node-name-spec
   (s/keys :req-un [:xtdb/node]))
 
+(defn- list-nodes [_request]
+  {:status 200
+   :body {:nodes (keys @nodes)}})
+
 (defn- create-node [request]
   (let [name (get-in request [:parameters :body :node])]
     (swap! nodes atom-add-node name)
