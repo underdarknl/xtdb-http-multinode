@@ -441,6 +441,9 @@
     (rr/router [["/" {:no-doc true
                       :get (fn [_] (resp/redirect "/_xtdb/query"))}]
                 ["/_xtdb"
+                 ["/list-nodes" (-> {:get list-nodes
+                                     :summary "List Current nodes"
+                                     :description "List all the current nodes"})]
                  ["/create-node" (-> {:post create-node
                                       :muuntaja (m/create)
                                       :parameters {:body ::node-name-spec}
