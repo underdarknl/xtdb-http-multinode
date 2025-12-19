@@ -1,12 +1,12 @@
 (defproject xtdb-http-multinode "0.1.0-SNAPSHOT"
   :description "XTDB http-server with multinode support"
-  :url "https://github.com/dekkers/xtdb-http-multinode"
+  :url "https://github.com/underdarknl/xtdb-http-multinode"
   :license {:name "MIT"}
   :dependencies [[org.clojure/clojure "1.11.1"]
-                 [com.xtdb/xtdb-core "1.24.4"]
-                 [com.xtdb/xtdb-rocksdb "1.24.4"]
-                 [com.xtdb/xtdb-jdbc "1.24.4"]
-                 [com.xtdb/xtdb-http-server "1.24.4"]
+                 [com.xtdb/xtdb-core "1.24.5"]
+                 [com.xtdb/xtdb-rocksdb "1.24.5"]
+                 [com.xtdb/xtdb-jdbc "1.24.5"]
+                 [com.xtdb/xtdb-http-server "1.24.5"]
                  [ch.qos.logback/logback-classic "1.2.3"]
                  [org.slf4j/slf4j-api "1.7.36"]]
   :jvm-opts ["-Dlogback.configurationFile=resources/logback.xml"]
