@@ -69,7 +69,7 @@ jobs:
       - name: Login to Librekat Container Registry
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io
+          registry: registry.underdark.nl
           username: ${{ secrets.librekat_user }}
           password: ${{ secrets.librekat_password }}
 
