@@ -25,7 +25,7 @@ jobs:
         with:
           images: |
             ghcr.io/${{ github.repository }}
-            registry.librekat.nl/librekat/xtdb-http-multinode
+            registry.underdark.nl/librekat/xtdb-http-multinode
           tags: |
             type=ref,event=branch
             type=ref,event=tag
