@@ -25,6 +25,7 @@ jobs:
         with:
           images: |
             ghcr.io/${{ github.repository }}
+            registry.librekat.nl/librekat/xtdb-http-multinode
           tags: |
             type=ref,event=branch
             type=ref,event=tag
@@ -65,7 +66,14 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push container image
+      - name: Login to Librekat Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.librekat_user }}
+          password: ${{ secrets.librekat_password }}
+
+      - name: Build and push container image to librekat container registry
         uses: docker/build-push-action@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
