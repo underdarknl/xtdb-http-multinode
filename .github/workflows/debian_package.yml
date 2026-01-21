@@ -1,5 +1,8 @@
 name: Build Debian package
 
+permissions:
+  contents: write
+
 on:
   merge_group:
   pull_request:
