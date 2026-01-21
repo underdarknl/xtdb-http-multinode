@@ -15,6 +15,11 @@ def xtdb_node():
     assert response.status_code == 200
     assert response.content == b'{"created":true}'
 
+    time.sleep(0.2)
+
+    response = requests.get(f'http://127.0.0.1:3000/_xtdb/list-nodes', headers=json_headers, timeout=5, data=data)
+    assert response.status_code == 200
+    assert response.content == f'["{node_name}"]'.encode("utf-8")
     yield node_name
 
     response = requests.post('http://127.0.0.1:3000/_xtdb/delete-node', headers=json_headers, timeout=5, data=f'{{"node": "{node_name}"}}')
