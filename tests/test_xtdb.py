@@ -20,7 +20,7 @@ def xtdb_node():
     response = requests.get(f'http://127.0.0.1:3000/_xtdb/list-nodes', headers=json_headers, timeout=5)
     assert response.status_code == 200
     nodes = response.json()
-    assert nodes == [node_name]
+    assert node_name in nodes["nodes"]
     yield node_name
 
     response = requests.post('http://127.0.0.1:3000/_xtdb/delete-node', headers=json_headers, timeout=5, data=f'{{"node": "{node_name}"}}')
