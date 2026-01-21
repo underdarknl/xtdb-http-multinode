@@ -10,11 +10,11 @@ on:
       - v*
 
 env:
-  TEST_TAG: ghcr.io/dekkers/xtdb-http-multinode:test
+  TEST_TAG: ghcr.io/${{ github.repository }}:test
 
 jobs:
   create_container_image:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -73,7 +73,7 @@ jobs:
           username: ${{ secrets.librekat_user }}
           password: ${{ secrets.librekat_password }}
 
-      - name: Build and push container image to librekat container registry
+      - name: Build and push container image to the container registries
         uses: docker/build-push-action@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
