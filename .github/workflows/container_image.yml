@@ -39,7 +39,7 @@ jobs:
         id: buildx
 
       - name: Build and export to local docker
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           load: true
@@ -77,7 +77,7 @@ jobs:
           password: ${{ secrets.librekat_password }}
 
       - name: Build and push container image to the container registries
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
