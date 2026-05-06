@@ -28,6 +28,13 @@ def xtdb_node():
     assert response.content == b'{"deleted":true}'
 
 
+def test_status(xtdb_node):
+    json_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+
+    response = requests.get(f'http://127.0.0.1:3000/_xtdb/{xtdb_node}/status', headers=json_headers, timeout=5)
+    assert response.status_code == 200
+
+
 def test_submit_tx(xtdb_node):
     json_headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 

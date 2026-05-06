@@ -18,7 +18,7 @@
 (defn ->status-muuntaja [opts]
   (m/create (-> (util/->default-muuntaja {:json-encode-fn http-json/camel-case-keys})
                 (m/install {:name "text/html"
-                            :encoder [->status-html-encoder opts]
+                            :encoder (->status-html-encoder opts)
                             :return :bytes}))))
 
 (defmulti transform-query-resp
