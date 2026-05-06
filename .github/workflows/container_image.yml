@@ -63,14 +63,14 @@ jobs:
           docker kill xtdb-test
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Login to Librekat Container Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: docker.underdark.nl
           username: ${{ secrets.librekat_user }}
