@@ -15,7 +15,7 @@ curl -X POST \
 ----
 
 
-Listing current nodes can done using a GET to `/_xtdb/list-nodes`
+Listing current nodes can be done using a GET to `/_xtdb/list-nodes`
 
 [source,curl]
 ----
